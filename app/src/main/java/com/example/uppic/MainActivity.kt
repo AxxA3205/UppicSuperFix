@@ -8,6 +8,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import coil.load
@@ -20,7 +21,8 @@ import kotlinx.coroutines.tasks.await
 import kotlin.coroutines.coroutineContext
 
 private const val REQUEST_CODE = 72
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
+    private lateinit var buttonshowai : Button
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var title: String
@@ -33,6 +35,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        buttonshowai = findViewById(R.id.buttonShowAllImage)
+        buttonshowai.setOnClickListener(this)
 
         setImageViewHome()
         initAction()
@@ -181,6 +186,16 @@ class MainActivity : AppCompatActivity() {
             crossfade(true)
             crossfade(500)
             transformations(RoundedCornersTransformation(15f))
+        }
+
+    }
+
+    override fun onClick(v: View) {
+        when(v.id){
+            R.id.buttonShowAllImage -> run {
+                val intentShowAi = Intent(this@MainActivity, dashboardpic::class.java)
+                startActivity(intentShowAi)
+            }
         }
     }
 }

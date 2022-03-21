@@ -15,6 +15,7 @@ import kotlinx.android.synthetic.main.activity_dashboardpic.*
 import ru.embersoft.getdatafromfirebasestorage.ImageAdapter
 
 class dashboardpic : AppCompatActivity() {
+    private lateinit var btnsai : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
