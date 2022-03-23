@@ -25,7 +25,7 @@ class ImageAdapter (private var  items:List<Item>, private val context: Context)
         return items.size
     }
 
-    override fun onBindViewHolder(holder: ImageAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
         Picasso.get().load(item.imageUrl).into(holder.imageView)
     }

@@ -4,9 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.tasks.Task
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ListResult
@@ -15,7 +13,6 @@ import kotlinx.android.synthetic.main.activity_dashboardpic.*
 import ru.embersoft.getdatafromfirebasestorage.ImageAdapter
 
 class dashboardpic : AppCompatActivity() {
-    private lateinit var btnsai : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
